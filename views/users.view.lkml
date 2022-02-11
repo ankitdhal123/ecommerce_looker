@@ -99,8 +99,29 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  dimension: full_name {
+    type: string
+    sql: CONCAT(CONCAT(${first_name}, ' '), ${last_name}) ;;
+  }
+
+  dimension: len_fullname {
+    type: string
+    sql: length(${full_name});;
+  }
+  dimension: age_tier {
+    type: tier
+    tiers: [1,10,20,30,40,50,60,70,80,90,100]
+    style: integer # the default value, could be excluded
+    sql: ${age} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, orders.count]
+  }
+
+  measure: avg_userAge {
+    type: average
+    sql: ${age_tier} ;;
   }
 }
