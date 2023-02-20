@@ -60,7 +60,26 @@ view: products {
     type: average
     sql: ${retail_price} ;;
   }
+  parameter: choose_formatting {
+    type: unquoted
+    allowed_value: {
+      value: "dollars"
+    }
+    allowed_value: {
+      value: "else"
+    }
+  }
 
+  measure: count_test_total {
+    type: count
+    value_format_name: decimal_0
+    html:
+    {% if choose_formatting._parameter_value == 'dollars' %}
+    $ {{rendered_value}}
+    {% else %}
+    {{rendered_value}}
+    {%endif%};;
+  }
   dimension: sku {
     type: string
     sql: ${TABLE}.sku ;;

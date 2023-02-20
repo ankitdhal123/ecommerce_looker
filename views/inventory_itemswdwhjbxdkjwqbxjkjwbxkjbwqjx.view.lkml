@@ -22,6 +22,8 @@ view: inventory_items {
     sql: ${TABLE}.cost ;;
   }
 
+
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
@@ -52,6 +54,13 @@ view: inventory_items {
     ]
     sql: ${TABLE}.created_at ;;
   }
+  dimension: date_formatted {
+    group_label: "Created" label: "Year"
+    sql: ${created_date} ;;
+    html:{{ rendered_value | year: "%C" }};;
+  }
+
+
 
   dimension: product_id {
     type: number
