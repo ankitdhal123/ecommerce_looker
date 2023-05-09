@@ -3,6 +3,11 @@ connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/dashboard/test_bug.dashboard.lookml"
+include: "/dashboard/tiles.dashboard.lookml"
+include: "/dashboard/test2.dashboard.lookml"
+
+
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.

@@ -1,7 +1,6 @@
-- dashboard: ankit_dashboard
-  title: Ankit Dashboard
+- dashboard: ankit_dashboard1
+  title: Ankit_Dashboard
   layout: newspaper
-  crossfilter_enabled: false
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: GWrWRAegUl3xjIQ3AuppUj
@@ -48,8 +47,8 @@
     table_theme: white
     enable_conditional_formatting: false
     header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
+    header_font_size: 10
+    rows_font_size: 10
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
@@ -62,10 +61,10 @@
     hidden_fields: []
     y_axes: []
     listen: {}
-    row: 2
+    row: 0
     col: 0
-    width: 8
-    height: 6
+    width: 4
+    height: 4
   - title: 'Bar Graph '
     name: 'Bar Graph '
     model: ecommerce_ankitd
@@ -109,9 +108,9 @@
     listen:
       Category: products.category
       Brand: products.brand
-    row: 2
-    col: 8
-    width: 16
+    row: 0
+    col: 5
+    width: 5
     height: 5
   - title: Demo
     name: Demo
@@ -134,7 +133,7 @@
     limit_displayed_rows: false
     enable_conditional_formatting: false
     header_text_alignment: left
-    header_font_size: '12'
+    header_font_size: '10'
     rows_font_size: 12
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
@@ -173,29 +172,30 @@
     series_types: {}
     listen:
       Brand: products.brand
-    row: 8
-    col: 0
-    width: 8
-    height: 6
+    row: 0
+    col: 15
+    width: 5
+    height: 5
   - name: Order Counts
     type: text
     title_text: Order Counts
     subtitle_text: ''
     body_text: ''
     row: 0
-    col: 6
-    width: 8
-    height: 2
+    col: 20
+    width: 2
+    height: 5
   - title: New Tile
     name: New Tile
     model: ecommerce_ankitd
     explore: inventory_items
     type: looker_donut_multiples
-    fields: [products.brand, inventory_items.total_cost, products.count]
+    fields: [products.brand, inventory_items.total_cost, products.total_retail_price]
     filters:
       inventory_items.total_cost: ''
       products.category: ''
-      products.brand: ANS
+      products.brand: Calvin Klein,Amicale,Call Of Duty,CoreyLynnCalter,Scala,10 Deep,626
+        BLUE,2EROS
     sorts: [inventory_items.total_cost desc]
     limit: 50
     column_limit: 50
@@ -232,10 +232,76 @@
     y_axes: []
     series_types: {}
     listen: {}
-    row:
-    col:
-    width:
-    height:
+    row: 0
+    col: 22
+    width: 2
+    height: 6
+  - title: New Tile
+    name: New Tile (2)
+    model: ab_project
+    explore: orders
+    type: single_value
+    fields: [orders.video]
+    sorts: [orders.video]
+    limit: 50
+    total: true
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    defaults_version: 1
+    series_types: {}
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    hidden_fields: []
+    y_axes: []
+    listen: {}
+    row: 0
+    col: 10
+    width: 5
+    height: 5
   filters:
   - name: Category
     title: Category

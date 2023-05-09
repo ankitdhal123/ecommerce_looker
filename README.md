@@ -49,3 +49,7 @@ To learn more about LookML and how to develop visit:
 - [Looker User Guide](https://looker.com/guide)
 - [Looker Help Center](https://help.looker.com)
 - [Looker University](https://training.looker.com/)
+-
+
+
+<img src="blob:chrome-untrusted://media-app/acce083b-019b-4f42-8cd9-057ab093c893" alt="Screenshot 2023-02-24 6.01.56 PM.png"/>
